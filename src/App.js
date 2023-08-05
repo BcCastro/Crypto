@@ -28,8 +28,8 @@ function App() {
   // Se crea una variable que va a contener el llamado de la API
   const getData = async () => {
     /* 
-      Se adjunta la URL que generamos en la página de la API con los    valores que necesitamos mostrar en nuestros componentes. En la parte de vs_currency se cambia el valor por defecto que es USD y se le pasa el valor que va a estar almacenado en nuestro estado selCur, es decir, la divisa que tengamos seleccionada en ese momento. 
-      En per_page cambia el valor 4 por 100, ya que al momento de mostrar el cambio de divisa, solo muestra las 4 primeras monedas, este valor puede variar de acuerdo a la información que requiera el usuario ver.
+      Se adjunta la URL que generamos en la página de la API con los  valores que necesitamos mostrar en nuestros componentes. En la parte de vs_currency se cambia el valor por defecto que es USD y se le pasa el valor que va a estar almacenado en nuestro estado selCur, es decir, la divisa que tengamos seleccionada en ese momento. 
+      En per_page cambia el valor 100 por 4, ya que al momento de mostrar el cambio de divisa, solo muestra las 4 primeras monedas, este valor puede variar de acuerdo a la información que requiera el usuario ver.
     */
     const response = await fetch(
       `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${selCur}&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C90d%2C1y`

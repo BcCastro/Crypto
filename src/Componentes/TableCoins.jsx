@@ -20,6 +20,11 @@ export default function TableCoins({ coins }) {
       <tbody>
         {coins.map((coin, index) => (
           <CoinRow coin={coin} key={index} index={index + 1} />
+
+
+
+
+          
         ))}
       </tbody>
     </table>

@@ -15,11 +15,10 @@ export default function Footer() {
           <p>© 2023</p>
         </div>
 
-        <div className='footer-down'>
-          <p>Developed by</p>
 
-        </div>
       </div>
     </div>
+
+
   )
 }
