@@ -1,5 +1,5 @@
-.cripto-first{
-    background: #02735E;
+.cripto-first {
+    background: rgba(197, 53, 241, 0.911);
     width: 95%;
     max-width: 500px;
     border-radius: 20px;
@@ -8,26 +8,23 @@
     text-align: center;
 }
 
-.icon-arrow{
+.icon-arrow {
     transform: rotate(90deg);
     font-size: 12px;
     padding: 5px;
 }
 
-.cripto-title{
+.cripto-title {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.cripto-title h2{
+.cripto-title h2 {
     text-transform: uppercase;
     font-size: 1.7rem;
 }
 
-.cripto-title img{
+.cripto-title img {
     width: 50px;
 }
-
-
-export default CardPrincipal;
