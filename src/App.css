@@ -21,7 +21,6 @@ main {
   place-items: center;
   gap: 30px;
   width: calc(87% + 30px);
-  ;
   margin: auto;
   padding: 50px 0;
 }
@@ -46,21 +45,21 @@ main {
   }
 }
 
-.green,
-.red {
+.white,
+.white {
   font-weight: bold;
 }
 
-.green {
-  color: green;
+.white {
+  color: rgb(255, 255, 255);
 }
 
-.red {
-  color: red;
+.white {
+  color: rgb(23, 214, 248);
 }
 
 .porcentaje {
-  background: white;
+  background: rgb(215, 15, 233);
   padding: 5px;
   border-radius: 5px;
   display: flex;

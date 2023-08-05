@@ -32,7 +32,7 @@ function App() {
       En per_page cambia el valor 4 por 100, ya que al momento de mostrar el cambio de divisa, solo muestra las 4 primeras monedas, este valor puede variar de acuerdo a la información que requiera el usuario ver.
     */
     const response = await fetch(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${selCur}&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C90d%2C1y`
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${selCur}&order=market_cap_desc&per_page=4&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d%2C30d%2C90d%2C1y`
     );
 
     /* 
@@ -99,7 +99,7 @@ function App() {
                     key={index}
                     price={`${symbol} - ${current_price} ${selCur} `}
                     porcentaje={deleteDec(
-                      price_change_percentage_30d_in_currency,
+                      2,
                       2
                     )}
                     img={image}

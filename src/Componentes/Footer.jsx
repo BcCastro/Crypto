@@ -12,7 +12,7 @@ export default function Footer() {
 
         <div className="footer-c">
           <p>Crypto Stadistics</p>
-          <p>© 202</p>
+          <p>© 2023</p>
         </div>
 
         <div className='footer-down'>

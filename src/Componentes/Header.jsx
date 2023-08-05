@@ -4,7 +4,7 @@ import './Header.css'
 export default function Header({ currencys, fun, cur }) {
     return (
         <header className='app-header'>
-            <p>Crypto Stadistics</p>
+            <p>Crypto Assets</p>
 
             <div className='select-button'>
                 <select value={cur} name="coinSelect" id="coinSelect" onChange={_ => { fun(document.getElementById("coinSelect").value) }}>
