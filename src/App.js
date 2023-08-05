@@ -53,10 +53,10 @@ function App() {
    
     const cur = await response_cur.json();
 
-    // Almacenamos la información de todas las monedas en este estado
+    // Aqui almacenamos la información de todas las monedas en este estado
     setCoins(json);
 
-    // Almacenamos el valor de las divisas en este estado
+    // Aqui almacenamos el valor de las divisas en este estado
     setCurrency(cur);
   };
 
@@ -71,7 +71,7 @@ function App() {
   }, [selCur]);
 
   /*
-    Con el operador ternario validamos: Si el valor es diferente a la información de coins, es decir, si la información que nos entrega la API aun no esta lista entonces va a aparecer el texto "cargando", de lo contrario va a renderizar los componentes
+    Con el operador ternario se valida: Si el valor es diferente a la información de coins, es decir, si la información que nos entrega la API aun no esta lista entonces va a aparecer el texto "cargando", de lo contrario va a renderizar los componentes
   */
   return !coins ? (
     "Cargando..."
