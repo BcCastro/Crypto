@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react' // Hooks
-// Importamos nuestra hoja de estilos
+import { useEffect, useState } from 'react' /*Hooks*/
+/*Importamos nuestra hoja de estilos*/
 import './App.css';
 
-// Importacion de los componentes principales de la aplicación
+/*Importacion de los componentes principales de la aplicación*/
 
 import Header from './Componentes/Header';
 import CardPrincipal from './Componentes/CardPrincipal';
@@ -13,10 +13,11 @@ import Footer from './Componentes/Footer';
 
 function App() {
   /*
+  Se crean 3 constantes para conocer el valor, la cantidad y el valor de las divisas consumidas por la API.
     Estados: Utilizo 3 estados principales
-    Estado setCoins: Aquí se guarda el valor de todas las monedas que nos entrega el consumo de la API.
-    Estado setCurrency: Aquí se guarda el valor de todas las divisas que nos entrega el consumo de la API.
-    Estado setSelCur: Aquí se guarda el valor de la divisa seleccionada.
+    Estado setCoins: Se guarda el valor de todas las monedas que nos entrega el consumo de la API.
+    Estado setCurrency: Se guarda el valor de todas las divisas que nos entrega el consumo de la API.
+    Estado setSelCur: Se guarda el valor de la divisa seleccionada.
   */
   const [coins, setCoins] = useState();
   const [currency, setCurrency] = useState();
@@ -25,7 +26,7 @@ function App() {
   /*
     Consumo de la API por medio del método async await y haciendo uso de Fetch
   */
-  // Se crea una variable que va a contener el llamado de la API
+  /*Se crea una variable que va a contener el llamado de la API*/
   const getData = async () => {
     /* 
       Se adjunta la URL que generamos en la página de la API con los  valores que necesitamos mostrar en nuestros componentes. En la parte de vs_currency se cambia el valor por defecto que es USD y se le pasa el valor que va a estar almacenado en nuestro estado selCur, es decir, la divisa que tengamos seleccionada en ese momento. 
@@ -42,7 +43,6 @@ function App() {
 
     /*
       La siguiente URL se genera  la API para que nos permita acceder a diferentes divisas, esta URL la almacenamos en una variable.
-
     */
     const response_cur = await fetch(
       `https://api.coingecko.com/api/v3/simple/supported_vs_currencies`
@@ -51,22 +51,22 @@ function App() {
     /*
       EL valor que nos retorna es un arreglo de tipo json, este valor lo vamos a almacenar en una variables y accedemos a él por medio del método json()
     */
-   
+
     const cur = await response_cur.json();
 
-    // Aqui almacena la información de todas las monedas en este estado
+    /*Aqui almacena la información de todas las monedas en este estado*/
     setCoins(json);
 
-    // Aqui almacena el valor de las divisas en este estado
+    /*Aqui almacena el valor de las divisas en este estado*/
     setCurrency(cur);
   };
 
-  // Este estado cargara la información cuando el componente este listo
+  /*Este estado cargara la información cuando el componente este listo*/
   useEffect(() => {
     getData();
   }, []);
 
-  // Este estado cargará la información cuando seleccionemos una nueva divisa
+  /*Este estado cargará la información cuando seleccionemos una nueva divisa*/
   useEffect(() => {
     getData();
   }, [selCur]);
@@ -122,15 +122,15 @@ function App() {
 
 export default App;
 
-// Función para formatear los decimales
+/*Función para formatear los decimales*/
 export function deleteDec(val, decimal) {
   return val.toFixed(decimal);
 }
 
-// Función para asignar la clase "green o red" de acuerdo al valor numérico
+/*Función para asignar la clase "green o red" de acuerdo al valor numérico*/
 export function colorDec(num) {
   return num > 0 ? "green" : "red";
 }
 
-// Función para separar los valores en miles
+/*Función para separar los valores en miles*/
 export const numberF = Intl.NumberFormat("es-ES");
